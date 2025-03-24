@@ -8,11 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint and Test
     steps:
-      - name: get source code
+      - name: Get source code
         uses: actions/checkout@v4
-      - name: lint
+      - name: Install dependencies
+        run: npm install
+      - name: Lint
         run: npm run lint
-      - name: test
+      - name: Test
         run: npm run test
   deploy:
     runs-on: ubuntu-latest
